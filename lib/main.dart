@@ -17,6 +17,9 @@ void main() async {
   );
 
   final appBootstrap = AppBootstrap();
+
+  await appBootstrap.initDotEnv();
+
   final root = appBootstrap.createRootWidget(container);
 
   runApp(root);
