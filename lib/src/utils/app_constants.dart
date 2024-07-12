@@ -1,3 +1,4 @@
 class AppConstants {
-  static const String dotEnvFilePath = 'assets/env/.env';
+  static const dotEnvFilePath = 'assets/env/.env';
+  static const pageSize = 10;
 }

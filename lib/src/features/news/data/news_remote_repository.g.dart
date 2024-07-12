@@ -1,25 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'network_manager.dart';
+part of 'news_remote_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$networkManagerHash() => r'0ba490e53b48c1137d313269d5875617883b75af';
+String _$newsRemoteRepositoryHash() =>
+    r'8bdb273aaf5e3738157b0a01cf43d68836c14c2c';
 
-/// See also [networkManager].
-@ProviderFor(networkManager)
-final networkManagerProvider = AutoDisposeProvider<NetworkManager>.internal(
-  networkManager,
-  name: r'networkManagerProvider',
+/// See also [newsRemoteRepository].
+@ProviderFor(newsRemoteRepository)
+final newsRemoteRepositoryProvider =
+    AutoDisposeProvider<NewsRemoteRepository>.internal(
+  newsRemoteRepository,
+  name: r'newsRemoteRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$networkManagerHash,
+      : _$newsRemoteRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef NetworkManagerRef = AutoDisposeProviderRef<NetworkManager>;
+typedef NewsRemoteRepositoryRef = AutoDisposeProviderRef<NewsRemoteRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
