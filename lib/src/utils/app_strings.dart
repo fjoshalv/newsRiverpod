@@ -3,4 +3,5 @@ class AppStrings {
 
   static const appName = 'Newsy';
   static const helloWorld = 'Hello World';
+  static const errorOccurred = 'An error occurred';
 }
