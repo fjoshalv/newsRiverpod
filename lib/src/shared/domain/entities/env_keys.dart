@@ -1,12 +1,12 @@
-enum EnkKeys {
+enum EnvKeys {
   newsApiUrl,
   newsApiKey;
 
   String get value {
     switch (this) {
-      case EnkKeys.newsApiUrl:
+      case EnvKeys.newsApiUrl:
         return 'NEWS_API_URL';
-      case EnkKeys.newsApiKey:
+      case EnvKeys.newsApiKey:
         return 'NEWS_API_KEY';
     }
   }

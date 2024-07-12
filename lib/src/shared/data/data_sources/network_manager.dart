@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/app_request.dart';
+import 'package:flutter_turnkey_test/src/shared/domain/entities/env_keys.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/rest_method.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -11,19 +13,23 @@ part 'network_manager.g.dart';
 class NetworkManager {
   NetworkManager({
     required this.networkManager,
-    required this.baseUrl,
+    required this.env,
   }) {
     _initializeInterceptors();
   }
 
   final Dio networkManager;
-  final String baseUrl;
+
+  final DotEnv env;
 
   Future<void> _initializeInterceptors() async {
     networkManager.interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) async {
-          // TODO: Implement token addition to headers
+          final token = env.get(EnvKeys.newsApiKey.value);
+
+          options.headers['Authorization'] = 'bearer $token';
+
           return handler.next(options);
         },
       ),
@@ -50,6 +56,7 @@ class NetworkManager {
   }) async {
     Response response;
     try {
+      final baseUrl = env.get(EnvKeys.newsApiUrl.value);
       final url = baseUrl + request.path(pathParameters);
       switch (request.restMethod) {
         case RestMethod.get:
@@ -69,6 +76,6 @@ class NetworkManager {
 NetworkManager networkManager(NetworkManagerRef ref) {
   return NetworkManager(
     networkManager: Dio(),
-    baseUrl: '',
+    env: dotenv,
   );
 }
