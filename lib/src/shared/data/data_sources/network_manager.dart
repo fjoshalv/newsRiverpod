@@ -3,10 +3,12 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_turnkey_test/src/shared/data/models/app_exception.dart';
 import 'package:flutter_turnkey_test/src/shared/data/models/response_json_factory.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/app_request.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/env_keys.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/rest_method.dart';
+import 'package:flutter_turnkey_test/src/utils/app_strings.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'network_manager.g.dart';
@@ -66,7 +68,13 @@ class NetworkManager {
       }
       return deserializer.fromJson(response.data);
     } on DioException catch (e) {
-      rethrow;
+      if (e.type == DioExceptionType.badResponse) {
+        final response = e.response!;
+        final message = response.data['message'] as String;
+        throw AppException(message: message);
+      } else {
+        throw const AppException(message: AppStrings.errorOccurred);
+      }
     }
   }
 
