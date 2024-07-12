@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 class SourceResponse {
   const SourceResponse({
     this.id,
@@ -6,4 +5,7 @@ class SourceResponse {
   });
   final String? id;
   final String name;
+
+  factory SourceResponse.fromMap(Map<String, dynamic> map) =>
+      SourceResponse(id: map['id'], name: map['name']);
 }

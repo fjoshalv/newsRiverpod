@@ -1,6 +1,4 @@
 import 'package:flutter_turnkey_test/src/features/news/data/models/article_response.dart';
-import 'package:meta/meta.dart';
-import 'dart:convert';
 
 class TopHeadlinesResponse {
   const TopHeadlinesResponse({
@@ -10,4 +8,15 @@ class TopHeadlinesResponse {
 
   final int totalResults;
   final List<ArticleResponse> articles;
+
+  factory TopHeadlinesResponse.fromMap(Map<String, dynamic> map) {
+    return TopHeadlinesResponse(
+      totalResults: map['totalResults'] as int,
+      articles: (map['articles'] as List<int>)
+          .map<ArticleResponse>(
+            (x) => ArticleResponse.fromMap(x as Map<String, dynamic>),
+          )
+          .toList(),
+    );
+  }
 }

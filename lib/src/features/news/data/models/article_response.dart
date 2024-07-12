@@ -19,4 +19,15 @@ class ArticleResponse {
   final DateTime publishedAt;
   final String? content;
   final SourceResponse sourceResponse;
+
+  factory ArticleResponse.fromMap(Map<String, dynamic> map) => ArticleResponse(
+        author: map['author'],
+        title: map['title'],
+        description: map['description'],
+        url: map['url'],
+        urlToImage: map['urlToImage'],
+        publishedAt: DateTime.parse(map['publishedAt']),
+        content: map['content'],
+        sourceResponse: SourceResponse.fromMap(map['source']),
+      );
 }
