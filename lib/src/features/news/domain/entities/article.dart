@@ -27,4 +27,14 @@ class Article {
         publishedAt: response.publishedAt.toLocal(),
         sourceName: response.sourceResponse.name,
       );
+
+  static final example = Article(
+    author: 'John Doe',
+    title: 'Example Article',
+    description: 'This is an example article',
+    url: 'https://example.com',
+    urlToImage: 'https://example.com/image.jpg',
+    publishedAt: DateTime(2022, 1, 1),
+    sourceName: 'Example News',
+  );
 }
