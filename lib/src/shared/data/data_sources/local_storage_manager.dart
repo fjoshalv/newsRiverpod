@@ -1,7 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:sembast/sembast.dart';
 import 'package:sembast/sembast_io.dart';
+
+part 'local_storage_manager.g.dart';
 
 class LocalStorageManager {
   const LocalStorageManager({
@@ -26,4 +28,9 @@ class LocalStorageManager {
       store: StoreRef.main(),
     );
   }
+}
+
+@riverpod
+LocalStorageManager localStorageManager(LocalStorageManagerRef ref) {
+  throw UnimplementedError();
 }
