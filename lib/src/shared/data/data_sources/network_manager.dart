@@ -75,6 +75,10 @@ class NetworkManager {
 
 @riverpod
 NetworkManager networkManager(NetworkManagerRef ref) {
+  ref.onDispose(() {
+    ref.read(networkManagerProvider).dispose();
+  });
+
   return NetworkManager(
     networkManager: Dio(),
     env: dotenv,
