@@ -1,4 +1,5 @@
 import 'package:flutter_turnkey_test/src/features/news/data/models/article_response.dart';
+import 'package:flutter_turnkey_test/src/shared/data/models/response_json_factory.dart';
 
 class TopHeadlinesResponse {
   const TopHeadlinesResponse({
@@ -18,5 +19,15 @@ class TopHeadlinesResponse {
           )
           .toList(),
     );
+  }
+}
+
+class TopHeadlinesDeserializer
+    implements ResponseJsonFactory<TopHeadlinesResponse> {
+  const TopHeadlinesDeserializer();
+
+  @override
+  TopHeadlinesResponse fromMap(dynamic json) {
+    return TopHeadlinesResponse.fromMap(json);
   }
 }

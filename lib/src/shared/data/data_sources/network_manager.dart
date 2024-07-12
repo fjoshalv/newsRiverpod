@@ -66,7 +66,7 @@ class NetworkManager {
           response = await networkManager.get(url, queryParameters: parameters);
           break;
       }
-      return deserializer.fromJson(response.data);
+      return deserializer.fromMap(response.data);
     } on DioException catch (e) {
       if (e.type == DioExceptionType.badResponse) {
         final response = e.response!;
