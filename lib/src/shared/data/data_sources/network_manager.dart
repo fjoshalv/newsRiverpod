@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_turnkey_test/src/shared/data/models/response_json_factory.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/app_request.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/env_keys.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/rest_method.dart';
@@ -50,7 +51,7 @@ class NetworkManager {
 
   Future<T> sendRequest<T>({
     required AppRequest request,
-    required T Function(dynamic json) deserializer,
+    required ResponseJsonFactory<T> deserializer,
     Map<String, dynamic>? parameters,
     Map<String, String>? pathParameters,
   }) async {
@@ -63,7 +64,7 @@ class NetworkManager {
           response = await networkManager.get(url, queryParameters: parameters);
           break;
       }
-      return deserializer(response.data);
+      return deserializer.fromJson(response.data);
     } on DioException catch (e) {
       rethrow;
     }
