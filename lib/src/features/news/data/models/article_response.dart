@@ -9,7 +9,6 @@ class ArticleResponse {
     this.author,
     this.description,
     this.urlToImage,
-    this.content,
   });
   final String? author;
   final String title;
@@ -17,7 +16,7 @@ class ArticleResponse {
   final String url;
   final String? urlToImage;
   final DateTime publishedAt;
-  final String? content;
+
   final SourceResponse sourceResponse;
 
   factory ArticleResponse.fromMap(Map<String, dynamic> map) => ArticleResponse(
@@ -27,7 +26,6 @@ class ArticleResponse {
         url: map['url'],
         urlToImage: map['urlToImage'],
         publishedAt: DateTime.parse(map['publishedAt']),
-        content: map['content'],
         sourceResponse: SourceResponse.fromMap(map['source']),
       );
 }
