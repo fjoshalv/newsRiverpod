@@ -1,10 +1,10 @@
 abstract class ResponseJsonFactory<T> {
-  T fromJson(dynamic data);
+  T fromMap(dynamic data);
 }
 
 class EmptyResponseJsonFactory implements ResponseJsonFactory<void> {
   const EmptyResponseJsonFactory();
 
   @override
-  void fromJson(dynamic _) {}
+  void fromMap(dynamic _) {}
 }

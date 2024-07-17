@@ -1,25 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'network_manager.dart';
+part of 'trends_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$networkManagerHash() => r'9ece88b041e0c543b3cabf9d560304170931e19d';
+String _$trendsControllerHash() => r'3733f5c405762dc45efe1d8beb517fc628767657';
 
-/// See also [networkManager].
-@ProviderFor(networkManager)
-final networkManagerProvider = Provider<NetworkManager>.internal(
-  networkManager,
-  name: r'networkManagerProvider',
+/// See also [TrendsController].
+@ProviderFor(TrendsController)
+final trendsControllerProvider =
+    AutoDisposeAsyncNotifierProvider<TrendsController, TrendsState>.internal(
+  TrendsController.new,
+  name: r'trendsControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$networkManagerHash,
+      : _$trendsControllerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef NetworkManagerRef = ProviderRef<NetworkManager>;
+typedef _$TrendsController = AutoDisposeAsyncNotifier<TrendsState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

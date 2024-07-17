@@ -1,8 +1,9 @@
-// TODO: Remove enum "request" when having at least one real request
 import 'package:flutter_turnkey_test/src/shared/domain/entities/rest_method.dart';
 
 enum AppRequest {
-  request;
+  request,
+  topHeadlines,
+  ;
 
   String path(Map<String, String>? pathParameters) {
     late String path;
@@ -10,6 +11,10 @@ enum AppRequest {
     switch (this) {
       case AppRequest.request:
         path = '/request';
+        break;
+      case AppRequest.topHeadlines:
+        path = '/top-headlines';
+        break;
     }
 
     if (pathParameters != null) {
@@ -26,6 +31,7 @@ enum AppRequest {
   RestMethod get restMethod {
     return switch (this) {
       AppRequest.request => RestMethod.get,
+      AppRequest.topHeadlines => RestMethod.get,
     };
   }
 }
