@@ -3,6 +3,7 @@ import 'package:flutter_turnkey_test/src/shared/domain/entities/rest_method.dart
 enum AppRequest {
   request,
   topHeadlines,
+  everything,
   ;
 
   String path(Map<String, String>? pathParameters) {
@@ -14,6 +15,9 @@ enum AppRequest {
         break;
       case AppRequest.topHeadlines:
         path = '/top-headlines';
+        break;
+      case AppRequest.everything:
+        path = '/everything';
         break;
     }
 
@@ -32,6 +36,7 @@ enum AppRequest {
     return switch (this) {
       AppRequest.request => RestMethod.get,
       AppRequest.topHeadlines => RestMethod.get,
+      AppRequest.everything => RestMethod.get,
     };
   }
 }
