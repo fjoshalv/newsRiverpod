@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_turnkey_test/src/shared/data/data_sources/local_storage_manager.dart';
-import 'package:flutter_turnkey_test/src/utils/app_bootstrap.dart';
+import 'package:news_riverpod/src/shared/data/data_sources/local_storage_manager.dart';
+import 'package:news_riverpod/src/utils/app_bootstrap.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

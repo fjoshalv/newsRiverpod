@@ -8,11 +8,11 @@ part 'local_storage_manager.g.dart';
 class LocalStorageManager {
   const LocalStorageManager({
     required this.database,
-    required this.store,
+    required this.mainStore,
   });
 
   final Database database;
-  final StoreRef store;
+  final StoreRef mainStore;
 
   static Future<Database> initDatabase(String filename) async {
     final appDocDir = await getApplicationDocumentsDirectory();
@@ -25,8 +25,41 @@ class LocalStorageManager {
     final db = await initDatabase(filename);
     return LocalStorageManager(
       database: db,
-      store: StoreRef.main(),
+      mainStore: StoreRef.main(),
     );
+  }
+
+  Future<T?> getRecordInCustomStore<T>({
+    required String key,
+    required StoreRef store,
+  }) async {
+    return await store.record(key).get(database) as T?;
+  }
+
+  Future<void> saveInCustomStore<T>(
+    T data, {
+    required StoreRef store,
+    required String key,
+  }) async {
+    await store.record(key).add(database, data);
+  }
+
+  Future<void> deleteInCustomStore<T>(
+    String key, {
+    required StoreRef store,
+  }) async {
+    await store.record(key).delete(database);
+  }
+
+  Stream<List<T>> watchRecordsInCustomStore<T>({
+    required StoreRef store,
+    Finder? finder,
+  }) {
+    return store.query(finder: finder).onSnapshots(database).map((event) {
+      return event.map((snapshot) {
+        return snapshot.value as T;
+      }).toList();
+    });
   }
 }
 

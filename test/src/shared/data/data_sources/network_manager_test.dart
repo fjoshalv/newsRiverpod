@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_turnkey_test/src/shared/data/data_sources/network_manager.dart';
-import 'package:flutter_turnkey_test/src/shared/data/models/response_json_factory.dart';
-import 'package:flutter_turnkey_test/src/shared/domain/entities/app_request.dart';
+import 'package:news_riverpod/src/shared/data/data_sources/network_manager.dart';
+import 'package:news_riverpod/src/shared/data/models/response_json_factory.dart';
+import 'package:news_riverpod/src/shared/domain/entities/app_request.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../mocks.dart';

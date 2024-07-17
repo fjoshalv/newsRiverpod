@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:news_riverpod/src/features/news/presentation/home/home_tabs.dart';
+import 'package:news_riverpod/src/utils/app_strings.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeShellScreen extends StatelessWidget {
@@ -24,20 +26,14 @@ class HomeShellScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: navigationShell.currentIndex,
         onTap: _goBranch,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.trending_up),
-            label: 'Trends',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark),
-            label: 'Bookmarks',
-          ),
-        ],
+        items: HomeTabs.values
+            .map(
+              (tab) => BottomNavigationBarItem(
+                icon: Icon(tab.icon),
+                label: tab.title,
+              ),
+            )
+            .toList(),
       ),
     );
   }

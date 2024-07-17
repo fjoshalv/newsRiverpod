@@ -1,4 +1,4 @@
-import 'package:flutter_turnkey_test/src/utils/app_constants.dart';
+import 'package:news_riverpod/src/utils/app_constants.dart';
 
 class NetworkParams {
   const NetworkParams({

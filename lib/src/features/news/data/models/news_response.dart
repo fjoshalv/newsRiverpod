@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/foundation.dart';
 
-import 'package:flutter_turnkey_test/src/features/news/data/models/article_response.dart';
-import 'package:flutter_turnkey_test/src/shared/data/models/response_json_factory.dart';
+import 'package:news_riverpod/src/features/news/data/models/article_response.dart';
+import 'package:news_riverpod/src/shared/data/models/response_json_factory.dart';
 
 class NewsResponse {
   const NewsResponse({

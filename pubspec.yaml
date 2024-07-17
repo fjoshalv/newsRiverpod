@@ -1,5 +1,5 @@
-name: flutter_turnkey_test
-description: "Flutter project for turnkey test. This will use News API to fetch
+name: news_riverpod
+description: "This will use News API to fetch
   news and explore the content that is provided, having features like search,
   bookmark, and explore."
 

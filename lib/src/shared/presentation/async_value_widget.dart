@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_turnkey_test/src/shared/presentation/error_message_widget.dart';
+import 'package:news_riverpod/src/shared/presentation/error_message_widget.dart';
 
 /// A reusable widget to provide default loading and error widgets when working
 /// with AsyncValue.

@@ -1,4 +1,4 @@
-import 'package:flutter_turnkey_test/src/features/news/data/models/source_response.dart';
+import 'package:news_riverpod/src/features/news/data/models/source_response.dart';
 
 class ArticleResponse {
   const ArticleResponse({
