@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_riverpod/src/features/news/application/top_headlines_service.dart';
 import 'package:news_riverpod/src/features/news/data/news_remote_repository.dart';
 import 'package:news_riverpod/src/features/news/domain/entities/news.dart';
 import 'package:news_riverpod/src/features/news/presentation/trends/trends_state.dart';
@@ -12,7 +13,8 @@ class TrendsController extends _$TrendsController {
   @override
   FutureOr<TrendsState> build() async {
     final topHeadlines = await _getInitialTopHeadlines();
-
+    ref.read(topHeadlinesServiceProvider).mostRecentGottenArticle =
+        topHeadlines.articles.first;
     return TrendsState(
       articles: topHeadlines.articles,
       page: 1,

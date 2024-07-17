@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:news_riverpod/src/design/app_colors.dart';
 import 'package:news_riverpod/src/design/app_sizes.dart';
+import 'package:news_riverpod/src/features/news/application/top_headlines_service.dart';
 import 'package:news_riverpod/src/features/news/presentation/trends/trends_controller.dart';
 import 'package:news_riverpod/src/features/news/presentation/widgets/article_widget.dart';
 import 'package:news_riverpod/src/shared/presentation/async_value_widget.dart';
@@ -32,23 +34,61 @@ class _TrendsScreenState extends ConsumerState<TrendsScreen> {
   Widget build(BuildContext context) {
     final stateValue = ref.watch(trendsControllerProvider);
     return Scaffold(
-      body: AsyncValueWidget(
-        value: stateValue,
-        data: (state) {
-          final articles = state.articles;
-          return ListView.builder(
-            controller: _scrollController,
-            itemCount:
-                state.hasReachedMax ? articles.length : articles.length + 1,
-            itemBuilder: (context, index) {
-              if (index >= articles.length) {
-                return const ListLoadingWidget();
-              }
-              final article = articles[index];
-              return ArticleWidget(article: article);
+      body: Stack(
+        alignment: Alignment.topCenter,
+        children: [
+          AsyncValueWidget(
+            value: stateValue,
+            data: (state) {
+              final articles = state.articles;
+              return ListView.builder(
+                controller: _scrollController,
+                itemCount:
+                    state.hasReachedMax ? articles.length : articles.length + 1,
+                itemBuilder: (context, index) {
+                  if (index >= articles.length) {
+                    return const ListLoadingWidget();
+                  }
+                  final article = articles[index];
+                  return ArticleWidget(article: article);
+                },
+              );
             },
-          );
-        },
+          ),
+          Positioned(
+            top: AppSizes.p24,
+            child: Consumer(
+              builder: (_, ref, child) {
+                final shouldRefreshTopHeadlinesValue =
+                    ref.watch(shouldRefreshTopHeadlinesProvider);
+
+                if (shouldRefreshTopHeadlinesValue.value == true) {
+                  return child!;
+                }
+
+                return const SizedBox.shrink();
+              },
+              child: SafeArea(
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: AppColors.lightBlue,
+                  ),
+                  onPressed: () {
+                    _scrollController.jumpTo(0);
+                    ref.invalidate(trendsControllerProvider);
+                  },
+                  child: Text(
+                    'Refresh',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge!
+                        .copyWith(fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
