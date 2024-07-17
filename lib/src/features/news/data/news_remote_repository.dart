@@ -30,7 +30,7 @@ class NewsRemoteRepository {
 
   Future<News> getEverything(NetworkParams params) async {
     final response = await networkManager.sendRequest(
-      request: AppRequest.topHeadlines,
+      request: AppRequest.everything,
       deserializer: const NewsDeserializer(),
       parameters: params.toMap(),
     );
