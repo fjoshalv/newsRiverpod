@@ -4,8 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_turnkey_test/src/features/news/data/models/article_response.dart';
 import 'package:flutter_turnkey_test/src/shared/data/models/response_json_factory.dart';
 
-class TopHeadlinesResponse {
-  const TopHeadlinesResponse({
+class NewsResponse {
+  const NewsResponse({
     required this.totalResults,
     required this.articles,
   });
@@ -13,8 +13,8 @@ class TopHeadlinesResponse {
   final int totalResults;
   final List<ArticleResponse> articles;
 
-  factory TopHeadlinesResponse.fromMap(Map<String, dynamic> map) {
-    return TopHeadlinesResponse(
+  factory NewsResponse.fromMap(Map<String, dynamic> map) {
+    return NewsResponse(
       totalResults: map['totalResults'] as int,
       articles: (map['articles'] as List)
           .map<ArticleResponse>(
@@ -25,7 +25,7 @@ class TopHeadlinesResponse {
   }
 
   @override
-  bool operator ==(covariant TopHeadlinesResponse other) {
+  bool operator ==(covariant NewsResponse other) {
     if (identical(this, other)) return true;
 
     return other.totalResults == totalResults &&
@@ -36,12 +36,11 @@ class TopHeadlinesResponse {
   int get hashCode => totalResults.hashCode ^ articles.hashCode;
 }
 
-class TopHeadlinesDeserializer
-    implements ResponseJsonFactory<TopHeadlinesResponse> {
-  const TopHeadlinesDeserializer();
+class NewsDeserializer implements ResponseJsonFactory<NewsResponse> {
+  const NewsDeserializer();
 
   @override
-  TopHeadlinesResponse fromMap(dynamic json) {
-    return TopHeadlinesResponse.fromMap(json);
+  NewsResponse fromMap(dynamic json) {
+    return NewsResponse.fromMap(json);
   }
 }

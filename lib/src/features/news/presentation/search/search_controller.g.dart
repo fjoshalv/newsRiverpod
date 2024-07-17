@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'trends_controller.dart';
+part of 'search_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$trendsControllerHash() => r'4bdfbc14e97685eb1646cddf24f7ca16b0c404b1';
+String _$searchControllerHash() => r'70cbba89986bf7bfc19b6724ffc9cb6e35f230da';
 
-/// See also [TrendsController].
-@ProviderFor(TrendsController)
-final trendsControllerProvider =
-    AutoDisposeAsyncNotifierProvider<TrendsController, TrendsState>.internal(
-  TrendsController.new,
-  name: r'trendsControllerProvider',
+/// See also [SearchController].
+@ProviderFor(SearchController)
+final searchControllerProvider =
+    AutoDisposeAsyncNotifierProvider<SearchController, SearchState>.internal(
+  SearchController.new,
+  name: r'searchControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$trendsControllerHash,
+      : _$searchControllerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$TrendsController = AutoDisposeAsyncNotifier<TrendsState>;
+typedef _$SearchController = AutoDisposeAsyncNotifier<SearchState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

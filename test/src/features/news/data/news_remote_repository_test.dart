@@ -1,19 +1,19 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_turnkey_test/src/features/news/data/models/article_response.dart';
-import 'package:flutter_turnkey_test/src/features/news/data/models/top_headlines_response.dart';
+import 'package:flutter_turnkey_test/src/features/news/data/models/news_response.dart';
 import 'package:flutter_turnkey_test/src/features/news/data/news_remote_repository.dart';
 import 'package:flutter_turnkey_test/src/features/news/domain/entities/article.dart';
-import 'package:flutter_turnkey_test/src/features/news/domain/entities/top_headlines.dart';
+import 'package:flutter_turnkey_test/src/features/news/domain/entities/news.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/app_request.dart';
-import 'package:flutter_turnkey_test/src/shared/domain/params/pagination_params.dart';
+import 'package:flutter_turnkey_test/src/shared/domain/params/network_params.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../mocks.dart';
 
 void main() {
-  const paginationParams = PaginationParams(page: 1);
+  const paginationParams = NetworkParams(page: 1);
 
-  const deserializer = TopHeadlinesDeserializer();
+  const deserializer = NewsDeserializer();
 
   late MockNetworkManager networkManager;
 
@@ -36,7 +36,7 @@ void main() {
               parameters: any(named: 'parameters'),
             ),
           ).thenAnswer(
-            (_) async => TopHeadlinesResponse(
+            (_) async => NewsResponse(
               totalResults: 1,
               articles: [ArticleResponse.example],
             ),
@@ -68,7 +68,7 @@ void main() {
               parameters: any(named: 'parameters'),
             ),
           ).thenAnswer(
-            (_) async => TopHeadlinesResponse(
+            (_) async => NewsResponse(
               totalResults: 1,
               articles: [ArticleResponse.example],
             ),
@@ -81,7 +81,7 @@ void main() {
           // Assert
           expect(
             result,
-            TopHeadlines(
+            News(
               totalResults: 1,
               articles: [Article.example],
             ),

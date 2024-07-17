@@ -42,17 +42,7 @@ class _TrendsScreenState extends ConsumerState<TrendsScreen> {
                 state.hasReachedMax ? articles.length : articles.length + 1,
             itemBuilder: (context, index) {
               if (index >= articles.length) {
-                return const Padding(
-                  padding: EdgeInsets.only(bottom: AppSizes.p12),
-                  child: Center(
-                    child: SizedBox.square(
-                      dimension: AppSizes.p28,
-                      child: CircularProgressIndicator(
-                        strokeWidth: AppSizes.p4,
-                      ),
-                    ),
-                  ),
-                );
+                return const ListLoadingWidget();
               }
               final article = articles[index];
               return ArticleWidget(article: article);
@@ -69,5 +59,26 @@ class _TrendsScreenState extends ConsumerState<TrendsScreen> {
     if (maxScroll - currentScroll <= AppConstants.scrollThreshold) {
       ref.read(trendsControllerProvider.notifier).loadMoreHeadlines();
     }
+  }
+}
+
+class ListLoadingWidget extends StatelessWidget {
+  const ListLoadingWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.only(bottom: AppSizes.p12),
+      child: Center(
+        child: SizedBox.square(
+          dimension: AppSizes.p28,
+          child: CircularProgressIndicator(
+            strokeWidth: AppSizes.p4,
+          ),
+        ),
+      ),
+    );
   }
 }

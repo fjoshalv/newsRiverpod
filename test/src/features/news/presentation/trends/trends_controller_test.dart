@@ -2,11 +2,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_turnkey_test/src/features/news/data/news_remote_repository.dart';
 import 'package:flutter_turnkey_test/src/features/news/domain/entities/article.dart';
-import 'package:flutter_turnkey_test/src/features/news/domain/entities/top_headlines.dart';
+import 'package:flutter_turnkey_test/src/features/news/domain/entities/news.dart';
 import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_controller.dart';
 import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_state.dart';
 import 'package:flutter_turnkey_test/src/shared/data/models/app_exception.dart';
-import 'package:flutter_turnkey_test/src/shared/domain/params/pagination_params.dart';
+import 'package:flutter_turnkey_test/src/shared/domain/params/network_params.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../../mocks.dart';
@@ -22,12 +22,12 @@ void main() {
   }
 
   setUpAll(() {
-    registerFallbackValue(TopHeadlines(
+    registerFallbackValue(News(
       totalResults: 1,
       articles: [Article.example],
     ));
 
-    registerFallbackValue(const PaginationParams(page: 1));
+    registerFallbackValue(const NetworkParams(page: 1));
 
     registerFallbackValue(
       AsyncData(
@@ -61,7 +61,7 @@ void main() {
     final newsRemoteRepository = MockNewsRemoteRepository();
 
     when(() => newsRemoteRepository.getTopHeadlines(any())).thenAnswer(
-      (_) async => TopHeadlines(
+      (_) async => News(
         totalResults: 1,
         articles: [Article.example],
       ),
@@ -155,7 +155,7 @@ void main() {
         final newsRemoteRepository = MockNewsRemoteRepository();
 
         when(() => newsRemoteRepository.getTopHeadlines(any())).thenAnswer(
-          (_) async => TopHeadlines(
+          (_) async => News(
             totalResults: 1,
             articles: [Article.example],
           ),
@@ -203,7 +203,7 @@ void main() {
         final newsRemoteRepository = MockNewsRemoteRepository();
 
         when(() => newsRemoteRepository.getTopHeadlines(any())).thenAnswer(
-          (_) async => TopHeadlines(
+          (_) async => News(
             totalResults: 1,
             articles: [Article.example],
           ),
@@ -257,7 +257,7 @@ void main() {
         final newsRemoteRepository = MockNewsRemoteRepository();
 
         when(() => newsRemoteRepository.getTopHeadlines(any())).thenAnswer(
-          (_) async => TopHeadlines(
+          (_) async => News(
             totalResults: 1,
             articles: [Article.example],
           ),
