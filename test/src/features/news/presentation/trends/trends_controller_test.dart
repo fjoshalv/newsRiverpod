@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_turnkey_test/src/features/news/data/news_remote_repository.dart';
 import 'package:flutter_turnkey_test/src/features/news/domain/entities/article.dart';
-import 'package:flutter_turnkey_test/src/features/news/domain/entities/top_headlines.dart';
+import 'package:flutter_turnkey_test/src/features/news/domain/entities/news.dart';
 import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_controller.dart';
 import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_state.dart';
 import 'package:flutter_turnkey_test/src/shared/data/models/app_exception.dart';
@@ -22,7 +22,7 @@ void main() {
   }
 
   setUpAll(() {
-    registerFallbackValue(TopHeadlines(
+    registerFallbackValue(News(
       totalResults: 1,
       articles: [Article.example],
     ));
@@ -61,7 +61,7 @@ void main() {
     final newsRemoteRepository = MockNewsRemoteRepository();
 
     when(() => newsRemoteRepository.getTopHeadlines(any())).thenAnswer(
-      (_) async => TopHeadlines(
+      (_) async => News(
         totalResults: 1,
         articles: [Article.example],
       ),
@@ -155,7 +155,7 @@ void main() {
         final newsRemoteRepository = MockNewsRemoteRepository();
 
         when(() => newsRemoteRepository.getTopHeadlines(any())).thenAnswer(
-          (_) async => TopHeadlines(
+          (_) async => News(
             totalResults: 1,
             articles: [Article.example],
           ),
@@ -203,7 +203,7 @@ void main() {
         final newsRemoteRepository = MockNewsRemoteRepository();
 
         when(() => newsRemoteRepository.getTopHeadlines(any())).thenAnswer(
-          (_) async => TopHeadlines(
+          (_) async => News(
             totalResults: 1,
             articles: [Article.example],
           ),
@@ -257,7 +257,7 @@ void main() {
         final newsRemoteRepository = MockNewsRemoteRepository();
 
         when(() => newsRemoteRepository.getTopHeadlines(any())).thenAnswer(
-          (_) async => TopHeadlines(
+          (_) async => News(
             totalResults: 1,
             articles: [Article.example],
           ),

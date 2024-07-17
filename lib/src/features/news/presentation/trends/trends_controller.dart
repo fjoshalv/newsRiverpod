@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_turnkey_test/src/features/news/data/news_remote_repository.dart';
-import 'package:flutter_turnkey_test/src/features/news/domain/entities/top_headlines.dart';
+import 'package:flutter_turnkey_test/src/features/news/domain/entities/news.dart';
 import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_state.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/params/pagination_params.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -20,7 +20,7 @@ class TrendsController extends _$TrendsController {
     );
   }
 
-  Future<TopHeadlines> _getInitialTopHeadlines() async {
+  Future<News> _getInitialTopHeadlines() async {
     final newsRemoteRepository = ref.read(newsRemoteRepositoryProvider);
     const params = PaginationParams(page: 1);
     final topHeadlines = await newsRemoteRepository.getTopHeadlines(params);
