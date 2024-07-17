@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_turnkey_test/src/routing/app_router.dart';
-import 'package:flutter_turnkey_test/src/utils/app_strings.dart';
+import 'package:news_riverpod/src/routing/app_router.dart';
+import 'package:news_riverpod/src/utils/app_strings.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});

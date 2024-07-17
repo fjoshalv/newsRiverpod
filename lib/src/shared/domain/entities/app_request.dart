@@ -1,4 +1,4 @@
-import 'package:flutter_turnkey_test/src/shared/domain/entities/rest_method.dart';
+import 'package:news_riverpod/src/shared/domain/entities/rest_method.dart';
 
 enum AppRequest {
   request,

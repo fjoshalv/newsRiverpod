@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_turnkey_test/src/features/news/data/news_remote_repository.dart';
-import 'package:flutter_turnkey_test/src/shared/data/data_sources/network_manager.dart';
+import 'package:news_riverpod/src/features/news/data/news_remote_repository.dart';
+import 'package:news_riverpod/src/shared/data/data_sources/network_manager.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:sembast/sembast.dart';
 

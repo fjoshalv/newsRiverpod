@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_turnkey_test/src/features/news/data/news_remote_repository.dart';
-import 'package:flutter_turnkey_test/src/features/news/domain/entities/news.dart';
-import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_state.dart';
-import 'package:flutter_turnkey_test/src/shared/domain/params/network_params.dart';
+import 'package:news_riverpod/src/features/news/data/news_remote_repository.dart';
+import 'package:news_riverpod/src/features/news/domain/entities/news.dart';
+import 'package:news_riverpod/src/features/news/presentation/trends/trends_state.dart';
+import 'package:news_riverpod/src/shared/domain/params/network_params.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'trends_controller.g.dart';

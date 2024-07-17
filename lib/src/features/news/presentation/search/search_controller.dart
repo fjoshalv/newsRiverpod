@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter_turnkey_test/src/features/news/data/news_remote_repository.dart';
-import 'package:flutter_turnkey_test/src/features/news/presentation/search/search_state.dart';
-import 'package:flutter_turnkey_test/src/shared/domain/params/network_params.dart';
+import 'package:news_riverpod/src/features/news/data/news_remote_repository.dart';
+import 'package:news_riverpod/src/features/news/presentation/search/search_state.dart';
+import 'package:news_riverpod/src/shared/domain/params/network_params.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'search_controller.g.dart';

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_turnkey_test/src/design/app_sizes.dart';
-import 'package:flutter_turnkey_test/src/features/news/domain/entities/article.dart';
-import 'package:flutter_turnkey_test/src/features/news/presentation/search/search_controller.dart';
-import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_screen.dart';
-import 'package:flutter_turnkey_test/src/features/news/presentation/widgets/article_widget.dart';
-import 'package:flutter_turnkey_test/src/shared/presentation/async_value_widget.dart';
-import 'package:flutter_turnkey_test/src/utils/app_constants.dart';
+import 'package:news_riverpod/src/design/app_sizes.dart';
+import 'package:news_riverpod/src/features/news/domain/entities/article.dart';
+import 'package:news_riverpod/src/features/news/presentation/search/search_controller.dart';
+import 'package:news_riverpod/src/features/news/presentation/trends/trends_screen.dart';
+import 'package:news_riverpod/src/features/news/presentation/widgets/article_widget.dart';
+import 'package:news_riverpod/src/shared/presentation/async_value_widget.dart';
+import 'package:news_riverpod/src/utils/app_constants.dart';
 
 class SearchScreen extends ConsumerStatefulWidget {
   const SearchScreen({super.key});

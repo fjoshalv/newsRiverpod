@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_turnkey_test/src/features/news/data/models/article_response.dart';
-import 'package:flutter_turnkey_test/src/features/news/data/models/news_response.dart';
-import 'package:flutter_turnkey_test/src/features/news/data/news_remote_repository.dart';
-import 'package:flutter_turnkey_test/src/features/news/domain/entities/article.dart';
-import 'package:flutter_turnkey_test/src/features/news/domain/entities/news.dart';
-import 'package:flutter_turnkey_test/src/shared/domain/entities/app_request.dart';
-import 'package:flutter_turnkey_test/src/shared/domain/params/network_params.dart';
+import 'package:news_riverpod/src/features/news/data/models/article_response.dart';
+import 'package:news_riverpod/src/features/news/data/models/news_response.dart';
+import 'package:news_riverpod/src/features/news/data/news_remote_repository.dart';
+import 'package:news_riverpod/src/features/news/domain/entities/article.dart';
+import 'package:news_riverpod/src/features/news/domain/entities/news.dart';
+import 'package:news_riverpod/src/shared/domain/entities/app_request.dart';
+import 'package:news_riverpod/src/shared/domain/params/network_params.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../mocks.dart';

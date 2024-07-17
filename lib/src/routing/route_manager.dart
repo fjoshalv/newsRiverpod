@@ -1,4 +1,4 @@
-import 'package:flutter_turnkey_test/src/routing/app_router.dart';
+import 'package:news_riverpod/src/routing/app_router.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

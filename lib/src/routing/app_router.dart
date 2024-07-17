@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_turnkey_test/src/features/news/presentation/home/home_shell_screen.dart';
-import 'package:flutter_turnkey_test/src/features/news/presentation/home/home_tabs.dart';
-import 'package:flutter_turnkey_test/src/features/news/presentation/search/search_screen.dart';
-import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_screen.dart';
-import 'package:flutter_turnkey_test/src/routing/app_route.dart';
+import 'package:news_riverpod/src/features/news/presentation/bookmarks/bookmarks_screen.dart';
+import 'package:news_riverpod/src/features/news/presentation/home/home_shell_screen.dart';
+import 'package:news_riverpod/src/features/news/presentation/home/home_tabs.dart';
+import 'package:news_riverpod/src/features/news/presentation/search/search_screen.dart';
+import 'package:news_riverpod/src/features/news/presentation/trends/trends_screen.dart';
+import 'package:news_riverpod/src/routing/app_route.dart';
 import 'package:go_router/go_router.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -57,9 +58,7 @@ extension HomeTabsRouting on HomeTabs {
           routes: [
             const _Route(
               route: AppRoute.bookmarks,
-              page: Center(
-                child: Text('Bookmarks'),
-              ),
+              page: BookmarksScreen(),
             ),
           ],
         ),

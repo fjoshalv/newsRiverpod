@@ -5,10 +5,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_turnkey_test/src/app.dart';
-import 'package:flutter_turnkey_test/src/shared/data/data_sources/local_storage_manager.dart';
-import 'package:flutter_turnkey_test/src/utils/app_constants.dart';
-import 'package:flutter_turnkey_test/src/utils/app_strings.dart';
+import 'package:news_riverpod/src/app.dart';
+import 'package:news_riverpod/src/shared/data/data_sources/local_storage_manager.dart';
+import 'package:news_riverpod/src/utils/app_constants.dart';
+import 'package:news_riverpod/src/utils/app_strings.dart';
 
 class AppBootstrap {
   Widget createRootWidget(ProviderContainer container) {
