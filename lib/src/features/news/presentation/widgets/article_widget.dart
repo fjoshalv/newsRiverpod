@@ -68,13 +68,19 @@ class ArticleWidget extends StatelessWidget {
                 Text(
                   article.description ?? AppStrings.noArticleDescription,
                   style: Theme.of(context).textTheme.bodyLarge,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-                Text(
-                  '${article.sourceName} - ${DateFormat.MMMMEEEEd().format(article.publishedAt)}',
-                  style: Theme.of(context).textTheme.titleSmall,
-                ),
+                gapH4,
                 Text(
                   article.author ?? AppStrings.noArticleAuthor,
+                  style: Theme.of(context).textTheme.titleSmall,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                gapH4,
+                Text(
+                  '${article.sourceName} - ${DateFormat.MMMMEEEEd().format(article.publishedAt)}',
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
               ],

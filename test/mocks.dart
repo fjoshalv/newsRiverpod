@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_turnkey_test/src/features/news/data/news_remote_repository.dart';
+import 'package:flutter_turnkey_test/src/shared/data/data_sources/network_manager.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:sembast/sembast.dart';
 
@@ -14,3 +16,11 @@ class MockInterceptors extends Mock implements Interceptors {}
 class MockResponse extends Mock implements Response {}
 
 class MockDotEnv extends Mock implements DotEnv {}
+
+class MockNetworkManager extends Mock implements NetworkManager {}
+
+class MockNewsRemoteRepository extends Mock implements NewsRemoteRepository {}
+
+class Listener<T> extends Mock {
+  void call(T? previous, T next);
+}

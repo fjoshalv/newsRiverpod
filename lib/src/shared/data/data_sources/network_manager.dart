@@ -81,14 +81,16 @@ class NetworkManager {
   void dispose() => networkManager.close();
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 NetworkManager networkManager(NetworkManagerRef ref) {
-  ref.onDispose(() {
-    ref.read(networkManagerProvider).dispose();
-  });
-
-  return NetworkManager(
+  final networkManager = NetworkManager(
     networkManager: Dio(),
     env: dotenv,
   );
+
+  ref.onDispose(() {
+    networkManager.dispose();
+  });
+
+  return networkManager;
 }

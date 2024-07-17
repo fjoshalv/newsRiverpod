@@ -28,4 +28,14 @@ class ArticleResponse {
         publishedAt: DateTime.parse(map['publishedAt']),
         sourceResponse: SourceResponse.fromMap(map['source']),
       );
+
+  static final example = ArticleResponse(
+    author: 'John Doe',
+    title: 'Example Article',
+    description: 'This is an example article',
+    url: 'https://example.com',
+    urlToImage: 'https://example.com/image.jpg',
+    publishedAt: DateTime(2022, 1, 1),
+    sourceResponse: SourceResponse.example,
+  );
 }

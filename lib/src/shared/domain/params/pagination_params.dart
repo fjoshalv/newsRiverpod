@@ -3,7 +3,7 @@ import 'package:flutter_turnkey_test/src/utils/app_constants.dart';
 class PaginationParams {
   final int page;
 
-  PaginationParams({
+  const PaginationParams({
     required this.page,
   });
 
