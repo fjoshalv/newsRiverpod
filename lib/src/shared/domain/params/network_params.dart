@@ -1,9 +1,9 @@
 import 'package:flutter_turnkey_test/src/utils/app_constants.dart';
 
-class PaginationParams {
+class NetworkParams {
   final int page;
 
-  const PaginationParams({
+  const NetworkParams({
     required this.page,
   });
 

@@ -6,7 +6,7 @@ import 'package:flutter_turnkey_test/src/features/news/domain/entities/news.dart
 import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_controller.dart';
 import 'package:flutter_turnkey_test/src/features/news/presentation/trends/trends_state.dart';
 import 'package:flutter_turnkey_test/src/shared/data/models/app_exception.dart';
-import 'package:flutter_turnkey_test/src/shared/domain/params/pagination_params.dart';
+import 'package:flutter_turnkey_test/src/shared/domain/params/network_params.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../../mocks.dart';
@@ -27,7 +27,7 @@ void main() {
       articles: [Article.example],
     ));
 
-    registerFallbackValue(const PaginationParams(page: 1));
+    registerFallbackValue(const NetworkParams(page: 1));
 
     registerFallbackValue(
       AsyncData(

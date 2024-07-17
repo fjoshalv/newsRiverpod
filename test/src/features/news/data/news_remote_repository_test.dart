@@ -5,13 +5,13 @@ import 'package:flutter_turnkey_test/src/features/news/data/news_remote_reposito
 import 'package:flutter_turnkey_test/src/features/news/domain/entities/article.dart';
 import 'package:flutter_turnkey_test/src/features/news/domain/entities/news.dart';
 import 'package:flutter_turnkey_test/src/shared/domain/entities/app_request.dart';
-import 'package:flutter_turnkey_test/src/shared/domain/params/pagination_params.dart';
+import 'package:flutter_turnkey_test/src/shared/domain/params/network_params.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../../mocks.dart';
 
 void main() {
-  const paginationParams = PaginationParams(page: 1);
+  const paginationParams = NetworkParams(page: 1);
 
   const deserializer = NewsDeserializer();
 

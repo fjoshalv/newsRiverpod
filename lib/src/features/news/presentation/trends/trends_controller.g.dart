@@ -6,7 +6,7 @@ part of 'trends_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$trendsControllerHash() => r'0cd08563b4bdeac7b42e57925e8edbc42ac72e8a';
+String _$trendsControllerHash() => r'4bdfbc14e97685eb1646cddf24f7ca16b0c404b1';
 
 /// See also [TrendsController].
 @ProviderFor(TrendsController)
