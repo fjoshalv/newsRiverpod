@@ -4,15 +4,17 @@ class NetworkParams {
   const NetworkParams({
     required this.page,
     this.query,
+    this.pageSize,
   });
 
   final int page;
+  final int? pageSize;
   final String? query;
 
   Map<String, String> toMap() {
     return {
       'page': page.toString(),
-      'pageSize': AppConstants.pageSize.toString(),
+      'pageSize': pageSize?.toString() ?? AppConstants.pageSize.toString(),
       if (query != null) 'q': query!,
     };
   }
