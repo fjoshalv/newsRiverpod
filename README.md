@@ -46,6 +46,10 @@ This is a Flutter application that displays news articles fetched from an API an
    flutter run
    ```
 
+5. **Set profile for iOS**
+
+   Set the profile in the iOS project in order to run in that platform
+
 ## Directory Structure
 
 ```
