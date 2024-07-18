@@ -1,4 +1,4 @@
-package com.example.flutter_turnkey_test
+package com.example.newsriverpod
 
 import io.flutter.embedding.android.FlutterActivity
 

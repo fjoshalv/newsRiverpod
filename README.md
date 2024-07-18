@@ -1,6 +1,6 @@
 # News App with Riverpod
 
-This is a Flutter application that displays news articles fetched from an API and allows users to save their favorite articles. The app uses Riverpod for state management and persists saved articles to a local Sembast database. Additionally, the app automatically fetch fresh content from the API to check if there is new top headlines. Unit tests are included in the project.
+This is a Flutter application that displays news articles fetched from an API and allows users to save their favorite articles. The app uses Riverpod for state management and persists saved articles to a local Sembast database. Additionally, the app automatically fetch fresh content from the API to check if there is new top headlines. Unit tests are included in the project. In addition, "Riverpod Architecture" was used, learn more in <a href="https://codewithandrea.com/articles/flutter-app-architecture-riverpod-introduction/" target="_blank">Code With Andrea</a>
 
 ## Features
 
