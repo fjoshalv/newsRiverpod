@@ -83,7 +83,7 @@ void main() {
             result,
             News(
               totalResults: 1,
-              articles: [Article.example],
+              articles: [Article.fromResponse(ArticleResponse.example)],
             ),
           );
         },

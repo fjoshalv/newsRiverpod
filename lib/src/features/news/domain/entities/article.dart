@@ -103,4 +103,9 @@ class Article {
       sourceName: map['sourceName'] as String,
     );
   }
+
+  @override
+  String toString() {
+    return 'Article(id: $id, author: $author, title: $title, description: $description, url: $url, urlToImage: $urlToImage, publishedAt: $publishedAt, sourceName: $sourceName)';
+  }
 }
